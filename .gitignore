@@ -24,6 +24,5 @@ pnpm-debug.log*
 *.sw?
 *.zip
 *.lock
-.vscode
 lib/
 plugins/

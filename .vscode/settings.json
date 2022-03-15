@@ -1,0 +1,4 @@
+{
+  "eslint.validate": ["javascript", "javascriptreact", "vue"],
+  "prettier.configPath": "babel/packages/3-babel-eslint-vue-ts-config-demo/.prettierrc.js"
+}

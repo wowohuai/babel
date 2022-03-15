@@ -1,0 +1,147 @@
+.wpg-info-table {
+  position: relative;
+  height: 100%;
+
+  a[type='danger'] {
+    color: #ff4d4f;
+  }
+  // 隐藏滚动条
+  /deep/ .wpg-table-body {
+    &::-webkit-scrollbar {
+      width: 0;
+      background-color: transparent;
+    }
+  }
+  /deep/ .wpg-table-header {
+    &::-webkit-scrollbar {
+      width: 0;
+      background-color: transparent;
+    }
+  }
+
+  /deep/ .wpg-table-tbody {
+    > tr > td {
+      vertical-align: middle;
+    }
+  }
+  // 去掉未滚动时出现的滚动条占位
+  /deep/ .wpg-table-body-inner {
+    overflow-y: auto !important; //覆盖内联样式
+  }
+
+  /deep/ .wpg-table-hide-scrollbar {
+    &::-webkit-scrollbar {
+      min-width: 0;
+    }
+  }
+
+  .info-table-page {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2; // 要大于 .wpg-table-fixed-right fixed 定位级别
+    display: flex !important;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 8px 20px;
+
+    // 去掉上一页和下一页的边框
+    /deep/ .wpg-pagination-prev,
+    /deep/ .wpg-pagination-next {
+      border: none;
+    }
+
+    .select-tip {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      font-size: 14px;
+    }
+  }
+  .addBox {
+    position: relative;
+    .addBtn {
+      display: none;
+      position: absolute;
+      font-size: 20px;
+      bottom: -23px;
+      right: -10px;
+    }
+  }
+
+  .wpg-table-row-cell-break-word:hover {
+    .addBox {
+      .addBtn {
+        display: block;
+      }
+    }
+  }
+  .wpg-table-center {
+    /deep/ .wpg-table-fixed-left .wpg-table-header .wpg-table-thead tr th {
+      padding-left: 30px !important;
+    }
+
+    /deep/ .wpg-table-fixed-left table tr td {
+      padding-left: 30px !important;
+    }
+  }
+  // 将不可选择的项目加上蒙层
+  /deep/ .wpg-checkbox-wrapper-disabled .wpg-checkbox-checked .wpg-checkbox-inner {
+    background: #4285f4 !important;
+    border: 1px solid #d6d6d6 !important;
+    border-radius: 4px;
+    opacity: 0.6;
+  }
+  .editable-cell {
+    position: relative;
+  }
+
+  .editable-cell-input-wrapper,
+  .editable-cell-text-wrapper {
+    padding-right: 24px;
+  }
+
+  .editable-cell-text-wrapper {
+    padding: 5px 24px 5px 5px;
+  }
+
+  .editable-cell-icon,
+  .editable-cell-icon-check {
+    position: absolute;
+    right: 0;
+    width: 20px;
+    cursor: pointer;
+  }
+
+  .editable-cell-icon {
+    display: none;
+    line-height: 18px;
+  }
+
+  .editable-cell-icon-check {
+    line-height: 28px;
+  }
+
+  .editable-cell:hover .editable-cell-icon {
+    display: inline-block;
+  }
+
+  .editable-cell-icon:hover,
+  .editable-cell-icon-check:hover {
+    color: #108ee9;
+  }
+
+  .editable-add-btn {
+    margin-bottom: 8px;
+  }
+}
+
+// 在黑色主题下，fix table的字体设为透明
+[data-wpg-theme='dark'] {
+  .info-table-view,
+  .wpg-info-table {
+    /deep/ .wpg-table-scroll table .wpg-table-fixed-columns-in-body:not([colspan]) {
+      color: transparent;
+    }
+  }
+}
