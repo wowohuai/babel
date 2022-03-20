@@ -5,17 +5,10 @@ module.exports = {
   },
   globals: {
     // 你的全局变量（设置为 false 表示它不允许被重新赋值）
-    BMap: true,
-    BMapLib: true,
-    expect: true,
-    sinon: true,
-    jest: true,
-    ht: true,
-    tinymce: true
   },
   extends: [
     'eslint:recommended',
-    'plugin:vue/essential', // 默认引入了 plugins: ['vue']
+    'plugin:vue/recommended', // 默认引入了 plugins: ['vue']
     'plugin:@typescript-eslint/recommended', // 默认引入了 plugins: ['@typescript-eslint']
     /** plugin:prettier/recommended等价于:
      *
